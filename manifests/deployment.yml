@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mycluster-c3ea"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mycluster-c3ea"
+  template:
+    metadata:
+      labels:
+        app: "mycluster-c3ea"
+    spec:
+      containers:
+        - name: "mycluster-c3ea"
+          image: "voteacr31122022.azurecr.io/mycluster"
+          ports:
+          - containerPort: 80
